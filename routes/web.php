@@ -66,16 +66,16 @@ Route::get('/logika/{awal}&{akhir}', function ($awal, $akhir) {
     if($awal > $akhir){
         return "Data Awal Tidak Boleh Lebih Besar";
     }else{
-        $angka_awal = 0;
+        $angka_awal = $awal;
+        $angka_sebelumnya = 0;
         echo "{$angka_awal}";
         echo "<br/>";
-        for ($i = $awal; $i <= $akhir; $i+$angka_awal){
-            $angka_sebelumnya = $i;
+        while($angka_sebelumnya <= $akhir){
             $angka_sekarang = $angka_awal + $angka_sebelumnya;
             echo "{$angka_sekarang}";
             echo "<br/>";
 
-            $angka_awal = $angka_sebelumnya;
+            $angka_sebelumnya = $angka_sekarang;
         }
     }
 });
