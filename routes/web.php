@@ -20,9 +20,9 @@ Route::get('/hello', function () {
 Route::get('/name/{name}', function ($name) {
     return "Hello {$name}";
 });
-Route::get('/data/{data?}', function ($data = "Kosong") {
-    return "Isi parameter = {$data}";
-});
+// Route::get('/data/{data?}', function ($data = "Kosong") {
+//     return "Isi parameter = {$data}";
+// });
 Route::get('/name/{name}', function ($name) {
     return "Nama = {$name}";
 })->where('name', '[A-Za-z]+');
@@ -79,3 +79,14 @@ Route::get('/logika/{awal}&{akhir}', function ($awal, $akhir) {
         }
     }
 });
+
+Route::get('/person', 'PersonController@index');
+Route::get('/sendData', 'PersonController@sendData');
+Route::get('/person/show/{param}', 'PersonController@show');
+// Route::resource('/student', 'StudentController');
+Route::get('/homepage', function () {
+    return view('home', ['name' => "Fatah At Thariq"]);
+});
+Route::get('/data', 'PersonController@data');
+Route::get('/my-academic/{course}/{task}/{quiz}/{mid_term}/{final}', 'StudentController@myCourse');
+
