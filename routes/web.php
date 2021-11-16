@@ -81,12 +81,17 @@ Route::get('/logika/{awal}&{akhir}', function ($awal, $akhir) {
 });
 
 Route::get('/person', 'PersonController@index');
-Route::get('/sendData', 'PersonController@sendData');
+Route::get('/person/send-data', 'PersonController@sendData');
 Route::get('/person/show/{param}', 'PersonController@show');
 // Route::resource('/student', 'StudentController');
 Route::get('/homepage', function () {
     return view('home', ['name' => "Fatah At Thariq"]);
 });
-Route::get('/data', 'PersonController@data');
-Route::get('/my-academic/{course}/{task}/{quiz}/{mid_term}/{final}', 'StudentController@myCourse');
+Route::get('/person/data', 'PersonController@data');
+Route::get('/student/my-academic/{course}/{task}/{quiz}/{mid_term}/{final}', 'StudentController@myCourse');
+// Route::get('/person', function () {
+//     return view('/layouts/app');
+// });
+Route::get('/person/add', 'PersonController@add');
+Route::post('/person/addProcess', 'PersonController@addProcess');
 

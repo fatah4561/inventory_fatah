@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('content')
+    <h1>Index Person</h1>
+@stop
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +12,5 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ini view Index</h1>
 </body>
 </html>

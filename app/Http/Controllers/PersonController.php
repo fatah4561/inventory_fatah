@@ -26,4 +26,14 @@ class PersonController extends Controller
         $names = ["acep", 'bagus', 'cecep', 'doni', 'erik', 'fatah'];
         return view('person.data', ['names' => $names]); 
     }
+    public function add(){
+        return view('person.add');
+    }
+    public function addProcess(Request $request){
+        $this -> validate($request, [
+            'person_name' => 'required|max:30',
+            'person_email' => 'required|email'
+        ]);
+        return  view('person.show', ['data' => $request]);
+    }
 }
